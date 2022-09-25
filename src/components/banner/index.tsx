@@ -3,7 +3,7 @@ import globalLady from "../../assets/globalLady.jpeg";
 import singer from "../../assets/ladySing.jpg";
 import { useState } from "react";
 
-import { Arrows } from "../index";
+import { Arrows, BlockIndicators } from "../index";
 
 const Banner = () => {
   const data = [
@@ -49,6 +49,11 @@ const Banner = () => {
             nextSlide={() =>
               setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
             }
+          />
+          <BlockIndicators
+            items={data}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
           />
         </div>
       </div>
