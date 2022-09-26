@@ -24,8 +24,8 @@ const Banner = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
-    <section className="mt-[71px] h-[60vh]">
-      <div className="carousel">
+    <section id="home" className="mt-[60px] h-[60vh] md:h-[80vh]">
+      <div className="carousel ">
         <div className="carousel__track">
           {data.map((item, index) => (
             <div
@@ -35,11 +35,20 @@ const Banner = () => {
               <img
                 alt={item.image}
                 src={item.image}
-                className="h-[60vh] w-[100%] object-cover"
+                className="h-[60vh] w-[100%] object-cover md:h-[80vh]"
               />
-              <h1 className="text-2xl absolute bottom-10 capitalize text-white z-10 left-8">
-                {item.text}
-              </h1>
+              <div className="banner__text">
+                <>
+                  <h1 className=" text-2xl absolute bottom-10 capitalize text-white z-10 left-8 md:text-3xl md:bottom-20 md:left-[50%] md:-translate-x-[50%]">
+                    {item.text}
+                  </h1>
+                  <BlockIndicators
+                    items={data}
+                    activeIndex={activeIndex}
+                    setActiveIndex={setActiveIndex}
+                  />
+                </>
+              </div>
             </div>
           ))}
           <Arrows
@@ -49,11 +58,6 @@ const Banner = () => {
             nextSlide={() =>
               setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
             }
-          />
-          <BlockIndicators
-            items={data}
-            activeIndex={activeIndex}
-            setActiveIndex={setActiveIndex}
           />
         </div>
       </div>

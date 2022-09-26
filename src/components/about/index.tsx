@@ -1,0 +1,48 @@
+import ReactPlayer from "react-player/youtube";
+
+const About = () => {
+  return (
+    <div className="px-4 py-16 overflow-hidden md:py-[6rem]" id="about">
+      <div className="md:max-w-5xl md:mx-auto">
+        <div className="space-y-10 overflow-hidden md:grid md:grid-cols-2 md:gap-8">
+          <div className="h-[450px] w-full">
+            <ReactPlayer
+              height="100%"
+              width="100%"
+              playing={true}
+              controls
+              url="https://www.youtube.com/watch?v=It4M-KiV12Q"
+            />
+          </div>
+          <div className="space-y-6 md:py-6 md:flex md:flex-col md:space-y-0 md:gap-6 lg:py-16">
+            <h2 className="text-[#545454] text-3xl uppercase about__header">
+              About Us
+            </h2>
+            <div className="space-y-2">
+              <p className="text-white">
+                Lady-to-Lady conference has given many ladies not only the
+                audacity to dream again but also to boldly rise-up to their
+                calling and become all that they were destined to be wherever
+                they are positioned in fulfilling their God-given assignment
+                here on earth.
+              </p>
+              <p className="text-white">
+                The atmosphere and the women you meet during these conferences
+                leaves you inspired, encouraged and ready to fine tune your
+                focus on the things that matter in your life – your God given
+                purpose here on earth..{" "}
+              </p>
+            </div>
+            <div className=" md:w-full lg:mt-6">
+              <button className="text-white border border-[yellow] hover:bg-[yellow] font-semibold hover:text-black py-3 px-5 rounded outline-none md:w-full">
+                Read More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default About;

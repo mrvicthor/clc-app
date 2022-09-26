@@ -22,8 +22,8 @@ const BlockIndicators = ({
           onClick={() => setActiveIndex(index)}
           key={index}
           className={`${
-            index === activeIndex ? "bg-[yellow]" : ""
-          } h-[3px] w-5 bg-white hover:bg-[yellow] cursor-pointer`}
+            index === activeIndex ? "bg-[yellow]" : "bg-white"
+          } h-[3px] w-5  hover:bg-[yellow] cursor-pointer`}
         />
       ))}
     </div>

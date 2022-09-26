@@ -1,18 +1,33 @@
 import ladyLogo from "../../assets/ladytolady.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 
 const Header = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
-  const [isActive, setIsActive] = useState<string>("Home");
-  useEffect(() => {}, [showNav]);
+  const [isActive, setIsActive] = useState<string>("");
+  const [selected, setSelected] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isActive == "") {
+      setIsActive("home");
+    }
+  }, [isActive, showNav]);
   return (
-    <header className="bg-[#FCEC2C] px-4 py-4 md:py-0 fixed w-full top-0 m-0 z-40">
-      <div className="md:max-w-5xl md:mx-auto">
-        <nav className="flex items-center justify-between">
+    <header className="bg-[#FCEC2C] px-4 py-4 md:py-0 fixed w-full top-0 m-0 z-40 border-b-[3px]  border-white">
+      <div className="md:max-w-5xl md:mx-auto h-[60px]">
+        <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
-            <img className="h-10 w-10" alt="lady-to-lady-logo" src={ladyLogo} />{" "}
-            <span className="text-lg font-semibold">Lady to lady global</span>
+            <Link to="home" spy={true} smooth={true}>
+              <img
+                className="h-10 w-10"
+                alt="lady-to-lady-logo"
+                src={ladyLogo}
+              />
+            </Link>
+            <span className="text-lg font-semibold cursor-pointer hover:text-white">
+              Lady to lady global
+            </span>
           </div>
 
           <button
@@ -34,25 +49,35 @@ const Header = () => {
 
           <ul
             id="primary-navigation"
-            className="primary-navigation md:relative md:translate-y-0 md:bg-transparent md:flex-row md:gap-4 md:items-center md:py-0 md:space-y-0 md:inset-0 md:px-0 md:z-0"
+            className="primary-navigation md:relative md:translate-y-0 md:h-full md:bg-transparent md:flex-row md:items-center md:gap-4 md:py-0 md:space-y-0 md:inset-0 md:px-0 md:z-0"
             data-visible={showNav ? "true" : "false"}
           >
             {[
-              "Home",
-              "About",
-              "Vision",
-              "Gallery",
-              "Livestream",
-              "Conferences",
+              "home",
+              "about",
+              "vision",
+              "gallery",
+              "livestream",
+              "conferences",
             ].map((item, index) => (
               <li
-                onClick={() => setIsActive(item)}
                 key={index}
-                className={`${
-                  isActive == item ? " active" : ""
-                } text-2xl font-semibold text-white cursor-pointer md:text-xl md:text-black md:py-5 md:border-0`}
+                className={` ${
+                  item == isActive ? "active" : ""
+                } text-2xl font-semibold text-white cursor-pointer md:text-lg md:text-black md:py-4 md:font-bold  md:border-0 capitalize md:hover:text-white`}
               >
-                {item}
+                <Link
+                  onClick={() => {
+                    setIsActive(item);
+                  }}
+                  activeClass={item}
+                  offset={-68}
+                  to={item}
+                  spy={true}
+                  smooth={true}
+                >
+                  {item}
+                </Link>
               </li>
             ))}
           </ul>
