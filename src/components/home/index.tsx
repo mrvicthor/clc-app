@@ -1,4 +1,4 @@
-import { Header, Banner, About } from "../index";
+import { Header, Banner, About, Vision } from "../index";
 const Home = () => {
   return (
     <>
@@ -6,8 +6,8 @@ const Home = () => {
       <main>
         <Banner />
         <About />
-        {/*<Vision />
-      <Footer /> */}
+        <Vision />
+        {/* <Footer />  */}
       </main>
     </>
   );

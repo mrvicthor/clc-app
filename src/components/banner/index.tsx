@@ -1,7 +1,7 @@
 import worship from "../../assets/worship.jpg";
 import globalLady from "../../assets/globalLady.jpeg";
 import singer from "../../assets/ladySing.jpg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Arrows, BlockIndicators } from "../index";
 
@@ -22,6 +22,18 @@ const Banner = () => {
 
   const len = data.length - 1;
   const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const nextSlide = () => {
+    return setActiveIndex(activeIndex === len ? 0 : activeIndex + 1);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setActiveIndex(activeIndex === len ? 0 : activeIndex + 1),
+      5000
+    );
+    return () => clearInterval(interval);
+  }, [activeIndex]);
 
   return (
     <section id="home" className="mt-[60px] h-[60vh] md:h-[80vh]">
@@ -55,9 +67,7 @@ const Banner = () => {
             prevSlide={() =>
               setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
             }
-            nextSlide={() =>
-              setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
-            }
+            nextSlide={nextSlide}
           />
         </div>
       </div>

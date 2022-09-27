@@ -4,5 +4,6 @@ import Arrows from "./arrows";
 import BlockIndicators from "./blockIndicators";
 import Home from "./home";
 import About from "./about";
+import Vision from "./vision";
 
-export { Header, Banner, Arrows, BlockIndicators, Home, About };
+export { Header, Banner, Arrows, BlockIndicators, Home, About, Vision };

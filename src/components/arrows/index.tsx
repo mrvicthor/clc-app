@@ -1,8 +1,5 @@
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
-import nextArrow from "../../assets/icon-next.svg";
-import prevArrow from "../../assets/icon-previous.svg";
-
 type ArrowProps = {
   prevSlide: () => void;
   nextSlide: () => void;
