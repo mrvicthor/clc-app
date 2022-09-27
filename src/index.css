@@ -19,7 +19,7 @@
     align-items: center;
     padding: 4rem 2rem;
     position: fixed;
-    inset: 10% 0% 0 0;
+    inset: 12.2% 0% 0 0;
     overflow: hidden;
     z-index: 100;
     transform: translateY(-150%);
@@ -88,7 +88,7 @@
 
   .carousel__button {
     position: absolute;
-    top: 50%;
+    top: 55%;
     transform: translateY(-100%);
     padding: 8px 10px;
     border-radius: 50%;

@@ -12,15 +12,6 @@ const About = () => {
           ref={ref}
           className="space-y-10 overflow-hidden md:grid md:grid-cols-2 md:gap-8 lg:gap-10"
         >
-          <div className="h-[450px] w-full">
-            <ReactPlayer
-              height="100%"
-              width="100%"
-              playing={true}
-              controls
-              url="https://www.youtube.com/watch?v=It4M-KiV12Q"
-            />
-          </div>
           <div className="space-y-6 md:py-6 md:flex md:flex-col md:space-y-0 md:gap-6 lg:py-12">
             <h2
               style={{
@@ -66,6 +57,15 @@ const About = () => {
                 Read More
               </button>
             </div>
+          </div>
+          <div className="h-[450px] w-full">
+            <ReactPlayer
+              height="100%"
+              width="100%"
+              playing={true}
+              controls
+              url="https://www.youtube.com/watch?v=It4M-KiV12Q"
+            />
           </div>
         </div>
       </div>

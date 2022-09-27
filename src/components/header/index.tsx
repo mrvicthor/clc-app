@@ -6,7 +6,6 @@ import { Link } from "react-scroll";
 const Header = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
   const [isActive, setIsActive] = useState<string>("");
-  const [selected, setSelected] = useState<boolean>(false);
 
   useEffect(() => {
     if (isActive == "") {
@@ -14,7 +13,7 @@ const Header = () => {
     }
   }, [isActive, showNav]);
   return (
-    <header className="bg-[#FCEC2C] px-4 py-4 md:py-0 fixed w-full top-0 m-0 z-40 border-b-[3px]  border-white">
+    <header className="bg-[#FCEC2C] px-4  fixed w-full top-0 m-0 z-40 border-b-[3px]  border-white">
       <div className="md:max-w-5xl md:mx-auto h-[60px]">
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
@@ -69,6 +68,7 @@ const Header = () => {
                 <Link
                   onClick={() => {
                     setIsActive(item);
+                    setShowNav(false);
                   }}
                   activeClass={item}
                   offset={-68}

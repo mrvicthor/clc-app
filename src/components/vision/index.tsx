@@ -8,17 +8,16 @@ const Vision = () => {
   return (
     <section className="px-4 py-16 bg-[yellow]" id="vision">
       <div className="h-full md:max-w-5xl md:mx-auto">
-        <div className="h-full space-y-6 md:space-y-12">
-          <div
-            ref={ref}
-            style={{
-              transform: isInView ? "none" : "translateX(-200px)",
-              opacity: isInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-            className="vision__container  md:flex md:flex-col"
-          >
-            <h2 className="text-black text-3xl font-semibold uppercase vision__header md:text-4xl">
+        <div ref={ref} className="h-full space-y-6 md:space-y-12">
+          <div className="vision__container  md:flex md:flex-col">
+            <h2
+              style={{
+                transform: isInView ? "none" : "translateX(-200px)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
+              className="text-black text-3xl font-semibold uppercase vision__header md:text-4xl"
+            >
               Vision
             </h2>
             <p className="text-[#B4641C] mt-6 md:text-sm">
