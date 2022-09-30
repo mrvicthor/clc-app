@@ -12,7 +12,7 @@ const About = () => {
           ref={ref}
           className="space-y-10 overflow-hidden md:grid md:grid-cols-2 md:gap-8 lg:gap-10"
         >
-          <div className="space-y-6 md:py-6 md:flex md:flex-col md:space-y-0 md:gap-6 lg:py-12">
+          <div className="space-y-6 md:py-6 md:flex md:flex-col md:space-y-0 self-center md:gap-6 lg:py-12">
             <h2
               style={{
                 transform: isInView ? "none" : "translateY(-200px)",

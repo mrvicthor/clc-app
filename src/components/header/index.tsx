@@ -17,16 +17,18 @@ const Header = () => {
       <div className="md:max-w-5xl md:mx-auto h-[60px]">
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
-            <Link to="home" spy={true} smooth={true}>
+            <Link to="/" spy={true} smooth={true}>
               <img
-                className="h-10 w-10"
+                className="h-10 w-10 cursor-pointer"
                 alt="lady-to-lady-logo"
                 src={ladyLogo}
               />
             </Link>
-            <span className="text-lg font-semibold cursor-pointer hover:text-white">
-              Lady to lady global
-            </span>
+            <Link to="/" spy={true} smooth={true}>
+              <span className="text-lg font-semibold cursor-pointer hover:text-white">
+                Lady to lady global
+              </span>
+            </Link>
           </div>
 
           <button
@@ -63,23 +65,38 @@ const Header = () => {
                 key={index}
                 className={` ${
                   item == isActive ? "active" : ""
-                } text-2xl font-semibold text-white cursor-pointer md:text-lg md:text-black md:py-4 md:font-bold  md:border-0 capitalize md:hover:text-white`}
+                }  text-2xl nav__link font-semibold cursor-pointer text-white md:text-lg md:text-black md:py-4 md:font-bold  md:border-0 capitalize md:hover:text-white`}
               >
-                <Link
-                  onClick={() => {
-                    setIsActive(item);
-                    setShowNav(false);
-                  }}
-                  activeClass={item}
-                  offset={-68}
-                  to={item}
-                  spy={true}
-                  smooth={true}
-                >
-                  {item}
-                </Link>
+                {item == "gallery" ? (
+                  <a
+                    href="https://www.facebook.com/ladytoladyconference"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {item}
+                  </a>
+                ) : (
+                  <Link
+                    onClick={() => {
+                      setIsActive(item);
+                      setShowNav(false);
+                    }}
+                    activeClass={item}
+                    offset={-68}
+                    to={item}
+                    spy={true}
+                    smooth={true}
+                  >
+                    {item}
+                  </Link>
+                )}
               </li>
             ))}
+            <li>
+              <button className="text-white border font-semibold text-2xl border-[yellow] py-1 px-6 md:text-lg md:border-black md:text-black md:hover:text-white md:hover:bg-black">
+                Register
+              </button>
+            </li>
           </ul>
         </nav>
       </div>

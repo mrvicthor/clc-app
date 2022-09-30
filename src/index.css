@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     position: fixed;
     inset: 12.2% 0% 0 0;
     overflow: hidden;
@@ -27,7 +27,7 @@
     background: #040c0c;
   }
   .primary-navigation {
-    @apply space-y-8;
+    @apply space-y-6;
   }
   .mobile-nav-toggle {
     z-index: 10000;
@@ -61,13 +61,9 @@
       /* border-bottom: 0.1em solid #641c84; */
     }
 
-    .primary-navigation > *:not(.active):hover::after {
+    .primary-navigation > .nav__link:not(.active):hover::after {
       transform: scaleX(1);
     }
-
-    /* .primary-navigation > :where(:not(:last-child)) {
-      margin-right: 2rem;
-    } */
 
     .blocks > .block__indicator {
       background: white;
@@ -177,7 +173,7 @@
   .vision__header::after {
     content: "";
     height: 2px;
-    background-color: white;
+    background-color: yellow;
     position: relative;
     display: block;
     left: 140px;
