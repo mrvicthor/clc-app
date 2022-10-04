@@ -59,7 +59,7 @@ const Header = () => {
               "vision",
               "gallery",
               "livestream",
-              "conferences",
+              "testimony",
             ].map((item, index) => (
               <li
                 key={index}
