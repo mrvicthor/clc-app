@@ -93,9 +93,14 @@ const Header = () => {
               </li>
             ))}
             <li>
-              <button className="text-white border font-semibold text-2xl border-[yellow] py-1 px-6 md:text-lg md:border-black md:text-black md:hover:text-white md:hover:bg-black">
+              <a
+                href="https://www.eventbrite.co.uk/e/lady-to-lady-global-conference-2023-tickets-432264032357"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white border font-semibold text-2xl border-[yellow] py-1 px-6 md:text-lg md:border-black md:text-black md:hover:text-white md:hover:bg-black"
+              >
                 Register
-              </button>
+              </a>
             </li>
           </ul>
         </nav>

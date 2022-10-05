@@ -1,6 +1,7 @@
 import worship from "../../assets/worship.jpg";
 import globalLady from "../../assets/globalLady.jpeg";
 import singer from "../../assets/ladySing.jpg";
+import lady from "../../assets/lady23.jpeg";
 import { useState, useEffect } from "react";
 
 import { Arrows, BlockIndicators } from "../index";
@@ -14,7 +15,7 @@ const Banner = () => {
     },
     {
       id: 2,
-      image: globalLady,
+      image: lady,
       text: "Mind blowing outreaches that cuts across boundaries",
     },
     { id: 3, image: singer, text: "Where the uncommon becomes common" },
