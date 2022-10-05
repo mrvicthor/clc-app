@@ -52,7 +52,7 @@ const Banner = () => {
               />
               <div className="banner__text">
                 <>
-                  <h1 className=" text-2xl absolute bottom-10 overflow-hidden capitalize  text-white z-10 left-8 md:text-3xl md:bottom-20 md:left-[50%] md:-translate-x-[50%]">
+                  <h1 className=" text-2xl absolute bottom-16 overflow-hidden capitalize text-white z-10  md:text-3xl md:bottom-20 md:left-[50%] md:-translate-x-[50%]">
                     {item.text}
                   </h1>
                   <BlockIndicators

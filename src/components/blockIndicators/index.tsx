@@ -16,7 +16,7 @@ const BlockIndicators = ({
   setActiveIndex,
 }: BlockProps) => {
   return (
-    <div className="blocks flex gap-3 bottom-4 left-[50%] -translate-x-[50%] absolute ">
+    <div className="blocks flex gap-3 bottom-8 left-[50%] -translate-x-[50%] absolute ">
       {items.map((item, index) => (
         <div
           onClick={() => setActiveIndex(index)}

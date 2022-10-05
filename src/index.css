@@ -84,7 +84,7 @@
 
   .carousel__button {
     position: absolute;
-    top: 55%;
+    top: 50%;
     transform: translateY(-100%);
     padding: 8px 10px;
     border-radius: 50%;
@@ -104,7 +104,7 @@
   }
 
   .banner__text {
-    height: 200px;
+    height: 250px;
     position: absolute;
     margin-inline: auto;
     bottom: 0;
@@ -117,6 +117,9 @@
     );
   }
 
+  .banner__text > h1 {
+    padding-inline: 2rem;
+  }
   .arrows {
     overflow: hidden;
     z-index: 100;

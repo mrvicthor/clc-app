@@ -25,7 +25,7 @@ const Header = () => {
               />
             </Link>
             <Link to="/" spy={true} smooth={true}>
-              <span className="text-lg font-semibold cursor-pointer hover:text-white">
+              <span className="text-lg font-semibold md:text-md cursor-pointer hover:text-white">
                 Lady to lady global
               </span>
             </Link>
@@ -65,7 +65,7 @@ const Header = () => {
                 key={index}
                 className={` ${
                   item == isActive ? "active" : ""
-                }  text-2xl nav__link font-semibold cursor-pointer text-white md:text-lg md:text-black md:py-4 md:font-bold  md:border-0 capitalize md:hover:text-white`}
+                }  text-2xl nav__link font-semibold cursor-pointer text-white md:text-sm md:text-black md:py-4 md:font-bold  md:border-0 capitalize md:hover:text-white lg:text-lg`}
               >
                 {item == "gallery" ? (
                   <a
@@ -97,7 +97,7 @@ const Header = () => {
                 href="https://www.eventbrite.co.uk/e/lady-to-lady-global-conference-2023-tickets-432264032357"
                 target="_blank"
                 rel="noreferrer"
-                className="text-white border font-semibold text-2xl border-[yellow] py-1 px-6 md:text-lg md:border-black md:text-black md:hover:text-white md:hover:bg-black"
+                className="text-white border font-semibold text-2xl border-[yellow] py-1 px-6 md:text-sm md:border-black md:text-black md:hover:text-white md:hover:bg-black  lg:text-lg"
               >
                 Register
               </a>
