@@ -6,7 +6,7 @@ const About = () => {
   const ref = useRef<HTMLDivElement>(null!);
   const isInView = useInView(ref, { once: true });
   return (
-    <div className="px-4 py-16 overflow-hidden md:py-[6rem]" id="about">
+    <div className="px-4 py-16 overflow-hidden md:pb-[5rem]" id="about">
       <div className="md:max-w-5xl md:mx-auto">
         <div
           ref={ref}
