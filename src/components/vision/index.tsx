@@ -16,11 +16,11 @@ const Vision = () => {
                 opacity: isInView ? 1 : 0,
                 transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
               }}
-              className="text-[#545454] text-3xl font-semibold uppercase vision__header md:text-4xl"
+              className="text-white text-3xl font-semibold uppercase vision__header md:text-4xl"
             >
               Vision
             </h2>
-            <p className="text-white mt-6 md:text-sm">
+            <p className="text-[#B3B3B3] mt-6 md:text-sm">
               Our Vision is to raise generations that will represent Christ,
               live for Christ, change nations and through us many will come to
               love Christ.

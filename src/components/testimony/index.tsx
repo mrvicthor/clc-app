@@ -19,8 +19,8 @@ const Testimony = ({}: Props) => {
       <div className="space-y-16 md:max-w-5xl md:mx-auto">
         <h2 className="text-lg normal-case text-center text-white md:text-2xl">
           Lady to lady global is powered by personalities of {""}
-          <span className="text-[yellow] text-4xl">{text}</span>
-          <Cursor cursorColor="yellow" />{" "}
+          <span className="text-[#FCD404] text-4xl">{text}</span>
+          <Cursor cursorColor="#FCD404" />{" "}
         </h2>
         <div className="flex flex-col items-center gap-8 md:flex-row md:justify-center md:gap-10">
           <figure ref={ref}>

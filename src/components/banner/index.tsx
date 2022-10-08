@@ -37,7 +37,7 @@ const Banner = () => {
   }, [activeIndex]);
 
   return (
-    <section id="home" className="mt-[60px] h-[90vh] md:h-[80vh]">
+    <section id="home" className="mt-[60px] h-[90vh] md:h-[92vh]">
       <div className="carousel ">
         <div className="carousel__track">
           {data.map((item, index) => (
@@ -48,7 +48,7 @@ const Banner = () => {
               <img
                 alt={item.image}
                 src={item.image}
-                className="h-[90vh] w-[100%] object-cover md:h-[80vh]"
+                className="h-[90vh] w-[100%] object-cover md:h-[92vh]"
               />
               <div className="banner__text">
                 <>

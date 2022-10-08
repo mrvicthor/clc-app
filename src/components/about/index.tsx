@@ -19,7 +19,7 @@ const About = () => {
                 opacity: isInView ? 1 : 0,
                 transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
               }}
-              className="text-[#545454] text-3xl uppercase about__header"
+              className="text-white font-semibold text-3xl uppercase about__header"
             >
               About Us
             </h2>
@@ -30,7 +30,7 @@ const About = () => {
                   opacity: isInView ? 1 : 0,
                   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
                 }}
-                className="text-white"
+                className="text-[#B3B3B3]"
               >
                 Lady-to-Lady conference has given many ladies not only the
                 audacity to dream again but also to boldly rise-up to their
@@ -44,7 +44,7 @@ const About = () => {
                   opacity: isInView ? 1 : 0,
                   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
                 }}
-                className="text-white"
+                className="text-[#B3B3B3]"
               >
                 The atmosphere and the women you meet during these conferences
                 leaves you inspired, encouraged and ready to fine tune your
