@@ -53,7 +53,7 @@ const About = () => {
               </p>
             </div>
             <div className=" md:w-full lg:mt-6">
-              <button className="text-white border border-[yellow] hover:bg-[yellow] font-semibold hover:text-black py-3 px-5 rounded outline-none md:w-full">
+              <button className="text-white border border-[#FCD404] hover:bg-[#FCD404] font-semibold hover:text-black py-3 px-5 rounded outline-none md:w-full">
                 Read More
               </button>
             </div>
