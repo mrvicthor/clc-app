@@ -5,8 +5,24 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { useRef, useState, useEffect } from "react";
+import { Player, PlayerEvent } from "@lottiefiles/react-lottie-player";
+import successMessage from "../../assets/successful-message.gif";
 
 const Footer = () => {
+  const player = useRef<Player>(null);
+  const [input, setInput] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [subscribed, setSubscribed] = useState<boolean>(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (input == "") return;
+    setEmail(input);
+    setSubscribed(true);
+    setInput("");
+  };
+  console.log(email);
   return (
     <footer className="py-16 px-4">
       <div className="space-y-10 md:max-w-5xl md:mx-auto">
@@ -52,16 +68,32 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-xl capitalize">
               subscribe to newsletter
             </h3>
-            <form className="rounded flex border border-[#B3B3B3] bg-white">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="py-2 px-5 outline-none"
-              />
-              <button className="py-2 px-5 text-white bg-[#FCD404] border-0">
-                Subscribe
-              </button>
-            </form>
+            {subscribed ? (
+              <Player
+                ref={player}
+                src="https://assets8.lottiefiles.com/packages/lf20_aAjwn1msVx.json"
+                autoplay={true}
+                loop={false}
+                speed={0.5}
+                style={{ width: "300px" }}
+              ></Player>
+            ) : (
+              <form
+                className="rounded flex border border-[#B3B3B3] bg-white"
+                onSubmit={handleSubmit}
+              >
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="py-2 px-5 outline-none"
+                  value={input}
+                  onChange={(e) => setInput(() => e.target.value)}
+                />
+                <button className="py-2 px-5 text-white bg-[#FCD404] border-0">
+                  Subscribe
+                </button>
+              </form>
+            )}
           </div>
           <div className="flex flex-col items-center gap-4 md:gap-6">
             <h3 className="text-white font-semibold text-xl capitalize">
