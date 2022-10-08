@@ -52,7 +52,7 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-xl capitalize">
               subscribe to newsletter
             </h3>
-            <form className="rounded  border border-[#B3B3B3]">
+            <form className="rounded flex border border-[#B3B3B3]">
               <input
                 type="email"
                 placeholder="Enter your email address"
