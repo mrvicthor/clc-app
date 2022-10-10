@@ -7,22 +7,44 @@ import {
 import { Link } from "react-scroll";
 import { useRef, useState, useEffect } from "react";
 import { Player, PlayerEvent } from "@lottiefiles/react-lottie-player";
+import { useForm, SubmitHandler } from "react-hook-form";
 import successMessage from "../../assets/successful-message.gif";
+// @ts-ignore
+import sanityClient from "./../../client";
 
+type Input = {
+  email: string;
+};
 const Footer = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Input>();
   const player = useRef<Player>(null);
-  const [input, setInput] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
+
   const [subscribed, setSubscribed] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (input == "") return;
-    setEmail(input);
+  const onSubmit: SubmitHandler<Input> = (data) => {
+    const doc = {
+      _type: "subscription",
+      email: data.email,
+    };
+    sanityClient.create(doc).then((res: any) => {
+      console.log("Email subscribed successfully");
+    });
     setSubscribed(true);
-    setInput("");
+    console.log(data);
   };
-  console.log(email);
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (input == "") return;
+  //   setEmail(input);
+  //   setSubscribed(true);
+  //   setInput("");
+  // };
+
   return (
     <footer className="py-16 px-4">
       <div className="space-y-10 md:max-w-5xl md:mx-auto">
@@ -78,21 +100,36 @@ const Footer = () => {
                 style={{ width: "300px" }}
               ></Player>
             ) : (
-              <form
-                className="rounded flex border border-[#B3B3B3] bg-white"
-                onSubmit={handleSubmit}
-              >
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="py-2 px-5 outline-none"
-                  value={input}
-                  onChange={(e) => setInput(() => e.target.value)}
-                />
-                <button className="py-2 px-5 text-white bg-[#FCD404] border-0">
-                  Subscribe
-                </button>
-              </form>
+              <>
+                <form
+                  className="rounded flex border border-[#B3B3B3] bg-white"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="py-2 px-5 outline-none"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: "Please enter a valid email address",
+                      },
+                    })}
+                    aria-invalid={errors.email ? "true" : "false"}
+                  />
+
+                  <button className="py-2 px-5 text-white bg-[#FCD404] border-0">
+                    Subscribe
+                  </button>
+                </form>
+
+                {errors.email && (
+                  <p className="text-red-700 text-md" role="alert">
+                    {errors.email?.message}
+                  </p>
+                )}
+              </>
             )}
           </div>
           <div className="flex flex-col items-center gap-4 md:gap-6">
