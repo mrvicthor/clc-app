@@ -29,21 +29,20 @@ const Footer = () => {
     const doc = {
       _type: "subscription",
       email: data.email,
-    };
-    sanityClient.create(doc).then((res: any) => {
+      createdAt: new Date().toISOString(),
+    }; // @ts-ignore
+    sanityClient.create(doc).then((res) => {
       console.log("Email subscribed successfully");
     });
     setSubscribed(true);
     console.log(data);
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (input == "") return;
-  //   setEmail(input);
-  //   setSubscribed(true);
-  //   setInput("");
-  // };
+  useEffect(() => {
+    sanityClient
+      .fetch(`*[_type == "subscription"]`) // @ts-ignore
+      .then((data) => console.log(data));
+  }, []);
 
   return (
     <footer className="py-16 px-4">
@@ -54,17 +53,17 @@ const Footer = () => {
               features
             </h3>
             <ul className="flex flex-col gap-4 mt-4 items-center">
-              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[yellow]">
+              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[#FCD404]">
                 <Link to="about" spy={true} smooth={true}>
                   about Us
                 </Link>
               </li>
-              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[yellow]">
+              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[#FCD404]">
                 <Link to="vision" spy={true} smooth={true}>
                   Vision
                 </Link>
               </li>
-              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[yellow]">
+              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[#FCD404]">
                 <a
                   href="https://www.facebook.com/ladytoladyconference"
                   target="_blank"
@@ -73,12 +72,12 @@ const Footer = () => {
                   gallery
                 </a>
               </li>
-              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[yellow]">
+              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[#FCD404]">
                 <Link to="testimony" spy={true} smooth={true}>
                   livestream
                 </Link>
               </li>
-              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[yellow]">
+              <li className="text-[#B3B3B3] capitalize cursor-pointer hover:text-[#FCD404]">
                 <Link to="testimony" spy={true} smooth={true}>
                   testimony
                 </Link>
@@ -91,14 +90,19 @@ const Footer = () => {
               subscribe to newsletter
             </h3>
             {subscribed ? (
-              <Player
-                ref={player}
-                src="https://assets8.lottiefiles.com/packages/lf20_aAjwn1msVx.json"
-                autoplay={true}
-                loop={false}
-                speed={0.5}
-                style={{ width: "300px" }}
-              ></Player>
+              <>
+                <p className="text-[#FCD404] font-medium">
+                  Subscription successful...
+                </p>
+                <Player
+                  ref={player}
+                  src="https://assets8.lottiefiles.com/packages/lf20_aAjwn1msVx.json"
+                  autoplay={true}
+                  loop={false}
+                  speed={0.5}
+                  style={{ width: "300px", height: "100px" }}
+                ></Player>
+              </>
             ) : (
               <>
                 <form
