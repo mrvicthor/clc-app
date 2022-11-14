@@ -38,7 +38,7 @@ const Banner = () => {
 
   return (
     <section id="home" className="mt-[60px] h-[93vh] md:h-[92vh]">
-      <div className="carousel ">
+      <div className="carousel">
         <div className="carousel__track">
           {data.map((item, index) => (
             <div

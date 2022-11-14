@@ -19,7 +19,7 @@
     align-items: center;
     padding: 2rem 2rem;
     position: fixed;
-    inset: 7% 0% 0 0;
+    inset: 60px 0% 0 0;
     overflow: hidden;
     z-index: 100;
     transform: translateY(-150%);
