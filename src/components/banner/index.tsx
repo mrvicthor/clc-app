@@ -1,7 +1,7 @@
 import worship from "../../assets/worship.jpg";
 import globalLady from "../../assets/globalLady.jpeg";
 import singer from "../../assets/ladySing.jpg";
-import lady from "../../assets/lady23.jpeg";
+import lady from "../../assets/lady-2023.jpg";
 import { useState, useEffect } from "react";
 
 import { Arrows, BlockIndicators } from "../index";
